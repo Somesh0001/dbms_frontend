@@ -7,11 +7,11 @@ function Page() {
   const [heads, setHeads] = useState<any[]>([]);
   const baseURL =
     process.env.NODE_ENV === "production"
-      ? "https://dbms-frontend-git-main-somesh0001s-projects.vercel.app/"
-      : "http://localhost:3000";
+      ? "https://dbms-frontend-gamma.vercel.app/"
+      : "http://localhost:3000/";
   async function getData(id: number): Promise<void> {
     try {
-      const response = await fetch("http://localhost:3000/api/questions", {
+      const response = await fetch(`${baseURL}api/questions`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
