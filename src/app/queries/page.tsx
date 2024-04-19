@@ -5,7 +5,10 @@ import StyledButton from "@/components/Button";
 function Page() {
   const [data, setData] = useState<any[]>([]);
   const [heads, setHeads] = useState<any[]>([]);
-  const baseURL = process.env.NODE_ENV === 'production' ? "https://your-production-api-url.com" : "http://localhost:3000";
+  const baseURL =
+    process.env.NODE_ENV === "production"
+      ? "https://dbms-frontend-git-main-somesh0001s-projects.vercel.app/"
+      : "http://localhost:3000";
   async function getData(id: number): Promise<void> {
     try {
       const response = await fetch("http://localhost:3000/api/questions", {

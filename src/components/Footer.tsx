@@ -5,7 +5,7 @@ function Footer() {
         <div>
           <h2 className="text-white text-lg font-semibold mb-4">About Us</h2>
           <p className="mb-4">
-            Embark on a journey with Group 1's DBMS project, crafting a tailored
+            Embark on a journey with Group 1 &apos; s DBMS project, crafting a tailored
             database solution for retailers. Explore inventory management, sales
             tracking, and customer interactions, unveiling the power of
             efficient data management in retail operations.
