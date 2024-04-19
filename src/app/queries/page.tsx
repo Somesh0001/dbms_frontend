@@ -2,15 +2,18 @@
 import React, { useState } from "react";
 import StyledButton from "@/components/Button";
 import StyledHeading from "@/components/StyledHeading";
+import { Loader } from "@/components/loader";
 function Page() {
   const [data, setData] = useState<any[]>([]);
   const [heads, setHeads] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
   const baseURL =
     process.env.NODE_ENV === "production"
       ? "https://dbms-frontend-gamma.vercel.app/"
       : "http://localhost:3000/";
   async function getData(id: number): Promise<void> {
     try {
+      setLoading(true);
       const response = await fetch(`${baseURL}api/questions`, {
         method: "POST",
         headers: {
@@ -18,7 +21,7 @@ function Page() {
         },
         body: JSON.stringify({ id }),
       });
-
+      setLoading(false);
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
@@ -30,6 +33,8 @@ function Page() {
       setHeads(Object.keys(jsonData[0]));
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
     }
   }
   const courseData = [
@@ -105,6 +110,14 @@ function Page() {
                     ))}
                   </tbody>
                 </table>
+              </div>
+            </>
+          )}
+          {data.length === 0 && loading && (
+            <>
+              <div className="flex items-center justify-center">
+                {" "}
+                <Loader />
               </div>
             </>
           )}
