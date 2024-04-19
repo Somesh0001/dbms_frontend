@@ -49,7 +49,7 @@ function Footer() {
           <p>Phone: +91 9044283186</p>
         </div>
       </div>
-      <p className="text-center text-xs pt-8">© 2024 Group I | DBMS</p>
+      {/* <p className="text-center text-xs pt-8">© 2024 Group I | DBMS</p> */}
     </footer>
   );
 }
