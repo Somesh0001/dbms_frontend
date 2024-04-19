@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import StyledButton from "@/components/Button";
-
+import StyledHeading from "@/components/StyledHeading";
 function Page() {
   const [data, setData] = useState<any[]>([]);
   const [heads, setHeads] = useState<any[]>([]);
@@ -52,13 +52,14 @@ function Page() {
   ];
   return (
     <div className="min-h-screen bg-black py-12 pt-36">
-      <h1 className="text-lg md:text-7xl text-center font-sans font-bold mb-8 text-white">
+      {/* <h1 className="text-lg md:text-5xl text-center font-sans font-bold mb-8 text-white">
         ALL QUERIES
-      </h1>
-      <div className="mx-4 flex-column justify-center items-center mx-8">
+      </h1> */}
+      <StyledHeading name="ALL Queries" />
+      <div className=" flex-column justify-center items-center mx-8">
         {courseData.map((query, index) => (
           <div key={index}>
-            <div>{query.question}</div>
+            <div className=" font-semibold py-3"> {query.question}</div>
             <div>
               <StyledButton
                 text="Check"
