@@ -113,7 +113,7 @@ function Page() {
               </div>
             </>
           )}
-          {data.length === 0 && loading && (
+          {loading && (
             <>
               <div className="flex items-center justify-center">
                 {" "}
